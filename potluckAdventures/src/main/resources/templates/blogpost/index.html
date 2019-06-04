@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+	<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>Blog Site</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link href="webjars/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    
+</head>
+	<body>
+	<div class="container">
+	
+		<div class="fragment/navbar :: navbar"></div>
+		
+  		<h1>Welcome to Our Potluck Adventures Post Site!</h1>
+ 	 	<h3>Check out our Potluck at Tech Talent South !</h3>
+ 	 	<h4>By Darren Gaither<h4>
+ 	 	
+	
+	
+	<!-- Add in the <body> of your template -->
+<p>Please use the form below to submit a Blog Post:</p>
+ <form action="#" th:action="@{/}" th:object="${blogPost}" method="post">
+ 
+ <!-- Need to remove table add bootstrap forms group -->
+    <table>
+	<tr>
+            <td>Title</td>
+	    <td><input type="text" th:field="*{title}" /></td>  
+	</tr>
+	<tr>
+	    <td>Author:</td>
+	    <td><input type="text" th:field="*{author}" /></td>
+	</tr>
+	<tr>
+    	    <td>Blog Entry:</td>
+	    <td><input type="text" th:field="*{blogEntry}" /></td>
+	</tr>
+	<tr>
+	    
+	</tr>
+    </table>
+ </form>
+ <!--Heading - Title -->
+ <!--Heading - Post Author-->
+ <!--Heading -  Post blog entry -->
+ 
+ 	<div class= "row">
+ 	   <div th:each="blog:${posts}">
+ 		<div class="col-md-3">
+ 			<div class="panel panel-warning">
+ 				<div class="panel-heading"></div>
+ 					
+ 					<h4 th:text="${blog.title}"?</h4>
+ 				<div class="panel-body">
+ 					<p th:text = "${blog.author}"></p>
+ 					<p th:text = "${blog.blogEntry}"></p>
+ 				</div>
+ 				<div class="panel-footer">
+		<!-- Link to Update -->
+		
+		<!-- Link to Show  -->
+		<form action="#" th:action="@{'/blogpost/{id}'(id=${blog.id})}" th:method="get">
+			<div class="form-group">			
+			<div class="btn btn-primary" type="submit", th:text="Get">Show Blog Post</div>
+		</div>
+	</form>
+		
+		<!--  Link to Destroy -->
+			<form action="#" th:action="@{'/destoryBlogPost/{id}'(id=${blog.id})}" th:method="delete" class="form-horizontal">
+				<div="form-group">
+					<input type="hidden" name="_method" value="delete"/>
+					<button type="submit" class="btn btn-danger" th:text="delete">Destory Post</button>
+            	</div>
+ 			</div>
+ 		  </div>
+ 		</div>
+ 		<div class="col-md-3"></div>
+ 		<div class="col-md-3"></div>
+ 		<div class="col-md-3"></div>
+ 			
+ 	</div>
+ 	
+ 	<a th:href="@{/blog_posts/new}"><button class= "btn btn-primary">Submit Blog Post</button></a>
+ 	
+</div>
+		<script src="webjars/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<script src="webjars/jquery/1.9.1/jquery.min.js"></script>
+
+	</body>	
+	
+</html>
+
+	

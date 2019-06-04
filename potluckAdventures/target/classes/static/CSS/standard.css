@@ -1,0 +1,4 @@
+<a th:href="@{/blog_posts/new}"><button class= "btn btn-primary">Submit a New Blog Post</button></a>
+
+
+<td><button type="submit">Submit Your Post</button></td>
