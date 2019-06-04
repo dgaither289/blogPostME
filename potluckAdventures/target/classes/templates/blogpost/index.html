@@ -3,46 +3,17 @@
 <head>
 	<title>Blog Site</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <link href="webjars/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../webjars/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     
 </head>
 	<body>
 	<div class="container">
 	
-		<div class="fragment/navbar :: navbar"></div>
+		<div th:replace="fragments/navbar :: navbar"></div>
 		
   		<h1>Welcome to Our Potluck Adventures Post Site!</h1>
  	 	<h3>Check out our Potluck at Tech Talent South !</h3>
  	 	<h4>By Darren Gaither<h4>
- 	 	
-	
-	
-	<!-- Add in the <body> of your template -->
-<p>Please use the form below to submit a Blog Post:</p>
- <form action="#" th:action="@{/}" th:object="${blogPost}" method="post">
- 
- <!-- Need to remove table add bootstrap forms group -->
-    <table>
-	<tr>
-            <td>Title</td>
-	    <td><input type="text" th:field="*{title}" /></td>  
-	</tr>
-	<tr>
-	    <td>Author:</td>
-	    <td><input type="text" th:field="*{author}" /></td>
-	</tr>
-	<tr>
-    	    <td>Blog Entry:</td>
-	    <td><input type="text" th:field="*{blogEntry}" /></td>
-	</tr>
-	<tr>
-	    
-	</tr>
-    </table>
- </form>
- <!--Heading - Title -->
- <!--Heading - Post Author-->
- <!--Heading -  Post blog entry -->
  
  	<div class= "row">
  	   <div th:each="blog:${posts}">
@@ -83,10 +54,14 @@
  	<a th:href="@{/blog_posts/new}"><button class= "btn btn-primary">Submit Blog Post</button></a>
  	
 </div>
-		<script src="webjars/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-		<script src="webjars/jquery/1.9.1/jquery.min.js"></script>
+		
+		
 
 	</body>	
+	<footer>
+		<script src="webjars/jquery/1.9.1/jquery.min.js"></script>
+		<script src="webjars/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	</footer>
 	
 </html>
 

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+
 <head>
 	<title>Blog Project</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -7,6 +7,8 @@
 	    <link href="../../css/standard.css" rel="stylesheet">
 </head>
 <body>
+<div th:fragment="navbar">
+
 <nav class="navbar navbar-default">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -60,10 +62,11 @@
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
+</div>
 
-
-	<script src="../../webjars/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<script src="../../webjars/jquery/1.9.1/jquery.min.js"></script>
+	<script src="../../webjars/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	
 </body>
 	
 
